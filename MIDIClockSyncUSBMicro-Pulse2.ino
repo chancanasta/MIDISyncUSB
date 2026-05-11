@@ -195,8 +195,8 @@ void gotClock()
     gTriggerSquare=TRUE;
 //do we have a previous clock?
   if(gLastMIDIClock==0)
-//we don't - so this is the first MIDI clock message we've recieved, if we guess around 120bpm
-//each 24 ppq signal will be 20ms apart - so let's use that for the first pulse
+//we don't - so this is the first MIDI clock message we've recieved, use our 'guess' bpm to start the clock going
+//we'll auto correct on the second clock signal
     gLastMIDIClock=gNow-gGuessClock;
 //get time between MIDI clocks
   diff=(gNow-gLastMIDIClock);
